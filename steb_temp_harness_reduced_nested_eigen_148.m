@@ -118,16 +118,16 @@ gama_a=sum(g*k2.^(1-t).*k2)/sum(k2);
 % gama_p=sum(g*k1.^(1-t).*VP(:,1))/sum(VP(:,1));
 % gama_a=sum(g*k2.^(1-t).*VA(:,1))/sum(VA(:,1));
  % ================================================================================================= 
-                                   % Calculation of stable steady states 
+                                   % Calculation of stable and unstable steady states 
 % ================================================================================================= 
 q1=-(((beta^2)*h*gama_p)+(beta*h*gama_a*gama_p)+(beta*h^2*alpha*gama_a*gama_p));
 q2=-(beta^2)-(h*alpha*beta*gama_a)+(h*alpha*beta*gama_p)+(gama_a*gama_p)+(2*h*alpha*gama_a*gama_p)+(h^2*alpha^2*gama_a*gama_p)-(k*(h*beta*gama_p)+(h*gama_a*gama_p)+(h^2*alpha*gama_a*gama_p));
 q3=(alpha*beta)+(alpha*gama_a)+(h*alpha^2*gama_a)-(k*(beta+(h*alpha*gama_a)));
-A3=(-q2+sqrt(q2^2-4*q1*q3))/(2*q1);
-A4=(-q2-sqrt(q2^2-4*q1*q3))/(2*q1);
+A3=(-q2+sqrt(q2^2-4*q1*q3))/(2*q1);    % unstable state for pollinator nodes
+A4=(-q2-sqrt(q2^2-4*q1*q3))/(2*q1);    % stable state for pollinator nodes
 
-P3=(alpha+(gama_p*A3./(1+h*gama_p*A3)));
-P4=(alpha+(gama_p*A4./(1+h*gama_p*A4)));
+P3=(alpha+(gama_p*A3./(1+h*gama_p*A3)));  % unstable state for plant nodes
+P4=(alpha+(gama_p*A4./(1+h*gama_p*A4)));  % stable state for plant nodes
 
 
 if imag(A3)==0 && A3>0
