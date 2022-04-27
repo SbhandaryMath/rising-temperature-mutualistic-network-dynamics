@@ -105,7 +105,7 @@ g=gama1(j);
 % gama_a=sum(g*k2.^(1-t))/n2;
 
 % %%%%%%%%degree  weighted%%%%%%%%%%%%
-g=0:0.1:3
+
 gama_p=sum(g*k1.^(1-t).*k1)/sum(k1);
 gama_a=sum(g*k2.^(1-t).*k2)/sum(k2);
 
