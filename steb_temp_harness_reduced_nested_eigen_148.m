@@ -161,7 +161,8 @@ if imag(A4)==0 && A4>0
  a14=(alpha-k-2*A1*beta+((gama_a*P1)./(1+h*gama_a*P1)));
  jacob=[a11 a12; a13 a14];
  jacob1=eig(jacob);
-     A6=[A6; nodf T(i) g real(jacob1(1)) real(jacob1(2)) min(real(jacob1))];
+     %A6=[A6; nodf T(i) g real(jacob1(1)) real(jacob1(2)) min(real(jacob1))];
+     A6=[A6; nodf T(i) g real(jacob1(1)) real(jacob1(2)) max(real(jacob1))];
      v1(i,j)=real(jacob1(1));
      v2(i,j)=real(jacob1(2));     %%%%%eigenvalue of the jacobian matrix
 else
